@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detran-DF · Veículo Detalhe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell vehicle-detail-page">
+    <header class="header-topappbar">
+      <div class="topappbar-left">
+        <div class="avatar"></div>
+        <div class="brand">
+          <strong>Detran-DF</strong>
+        </div>
+      </div>
+      <button class="topappbar-button" aria-label="Notificações">
+        <img src="assets/top-button-icon.svg" alt="Notificações">
+      </button>
+    </header>
+
+    <main class="vehicle-detail-main">
+      <section class="vehicle-detail-board">
+        <section class="vehicle-detail-hero">
+          <div class="vehicle-detail-text">
+            <span class="eyebrow">VEÍCULO ATUAL</span>
+            <h1>Toyota Corolla XEi 2023</h1>
+            <div class="vehicle-detail-meta">
+              <span class="vehicle-plate">ABC-1D23</span>
+              <span class="vehicle-status-pill">EM DIA</span>
+            </div>
+          </div>
+          <button class="secondary-button select-all-button">Selecionar Tudo</button>
+        </section>
+
+        <section class="detail-grid">
+          <article class="detail-card large-card">
+            <div class="detail-card-header">
+              <h2>IPVA 2024</h2>
+              <p>COTA ÚNICA OU 1ª PARCELA</p>
+            </div>
+            <div class="detail-card-body">
+              <p class="card-note">Vencimento em 15/05/2024</p>
+              <div class="detail-card-status">
+                <span class="status-badge overdue">Atrasado</span>
+                <span class="detail-card-value">R$ 1.250,80</span>
+              </div>
+            </div>
+            <div class="detail-card-select">
+              <label>
+                <input type="checkbox" class="fee-checkbox" data-value="1250.80">
+                Selecionar taxa
+              </label>
+            </div>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-card-header">
+              <h2>Taxa de Licenciamento</h2>
+              <p>Exercício 2024</p>
+            </div>
+            <div class="detail-card-body">
+              <span class="detail-card-value">R$ 144,86</span>
+            </div>
+            <div class="detail-card-select">
+              <label>
+                <input type="checkbox" class="fee-checkbox" data-value="144.86">
+                Selecionar taxa
+              </label>
+            </div>
+          </article>
+
+          <article class="detail-card warning-card">
+            <div class="detail-card-header">
+              <h2>Excesso de Velocidade</h2>
+              <p>Av. Paulista, 1500 - São Paulo/SP</p>
+            </div>
+            <div class="detail-card-body">
+              <p class="card-note">Data: 12/03/2024</p>
+              <span class="detail-card-value">R$ 195,23</span>
+            </div>
+            <div class="detail-card-select">
+              <label>
+                <input type="checkbox" class="fee-checkbox" data-value="195.23">
+                Selecionar taxa
+              </label>
+            </div>
+          </article>
+
+          <article class="detail-card warning-card">
+            <div class="detail-card-header">
+              <h2>Estacionamento Proibido</h2>
+              <p>Rua Oscar Freire, 200 - São Paulo/SP</p>
+            </div>
+            <div class="detail-card-body">
+              <p class="card-note">Data: 05/04/2024</p>
+              <span class="detail-card-value">R$ 88,38</span>
+            </div>
+            <div class="detail-card-select">
+              <label>
+                <input type="checkbox" class="fee-checkbox" data-value="88.38">
+                Selecionar taxa
+              </label>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <aside class="payment-panel">
+        <section class="payment-methods">
+          <div class="payment-header">
+            <h2>Formas de Pagamento</h2>
+          </div>
+          <button class="payment-card pix-card">
+            <div>
+              <strong>Pagar com Pix</strong>
+              <p>Aprovação imediata do documento</p>
+            </div>
+            <span class="payment-tag">5% OFF</span>
+          </button>
+          <button class="payment-card card-card">
+            <div>
+              <strong>Parcelar no Cartão</strong>
+              <p>Em até 12x com taxas reduzidas</p>
+            </div>
+          </button>
+        </section>
+
+        <div class="payment-note">
+          Ao efetuar o pagamento via PIX, a baixa do débito no sistema do DETRAN ocorre em até 30 minutos. Pagamentos em boleto ou cartão podem levar até 48 horas úteis.
+        </div>
+
+        <div class="selected-summary">
+          <div>
+            <span>Total Selecionado</span>
+            <strong id="selectedTotalValue">R$ 0,00</strong>
+          </div>
+          <button class="primary-button payment-confirm-button">Confirmar Pagamento</button>
+        </div>
+      </aside>
+
+      <div class="modal-overlay payment-confirm-modal" aria-hidden="true">
+        <div class="modal-card">
+          <button class="modal-close" aria-label="Fechar">×</button>
+          <span class="eyebrow">Boleto Gerado</span>
+          <h2>Pagamento confirmado</h2>
+          <p>Seu boleto foi gerado com sucesso e estará disponível para pagamento em até 24 horas úteis.</p>
+          <button class="primary-button modal-ok-button">Ok</button>
+        </div>
+      </div>
+    </main>
+
+    <nav class="nav-active-state bottom-nav">
+      <a class="nav-item" href="home.html">
+        <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
+        <span>Início</span>
+      </a>
+      <a class="nav-item active" href="veiculos.html">
+        <img class="nav-icon" src="assets/icon-vehicles-active.svg" alt="Veículos">
+        <span>Veículos</span>
+      </a>
+      <a class="nav-item" href="carteira.html">
+        <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
+        <span>Documentos</span>
+      </a>
+      <a class="nav-item" href="login.html">
+        <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
+        <span>Perfil</span>
+      </a>
+    </nav>
+  <script src="navigation.js"></script>
+  </div>
+</body>
+</html>

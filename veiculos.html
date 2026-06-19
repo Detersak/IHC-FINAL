@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veículos | Detran-DF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell vehicles-page">
+    <header class="header-topappbar">
+      <div class="topappbar-left">
+        <div class="avatar profile-avatar"></div>
+        <div class="brand">
+          <strong>Detran-DF</strong>
+        </div>
+      </div>
+      <button class="topappbar-button" aria-label="Notificações">
+        <img src="assets/top-button-icon.svg" alt="Notificações">
+      </button>
+    </header>
+
+    <main class="main-vehicles">
+      <section class="vehicle-current-header">
+        <div>
+          <span class="eyebrow">Veículo Atual</span>
+          <h2>Volkswagen Taos 2023</h2>
+          <p class="vehicle-current-meta">Placa RQX-5F82 • Cor Azul Atlantic</p>
+        </div>
+        <button class="primary-button" data-link="veiculodetalhe.html">Ver Detalhes do Veículo</button>
+      </section>
+
+      <section class="search-section">
+        <div class="search-heading">
+          <h2>Consulta de Procedência</h2>
+          <p>Verifique o histórico completo de qualquer veículo pela placa.</p>
+        </div>
+
+        <div class="search-action">
+          <div class="search-input">
+            <img src="assets/icon-search.svg" alt="Buscar placa" class="search-input-icon">
+            <input type="text" placeholder="Digite a placa (ex: ABC1D23)" aria-label="Digite a placa">
+          </div>
+          <button type="button" class="search-button" data-link="veiculodetalhe.html">CONSULTAR</button>
+        </div>
+      </section>
+
+      <section class="main-content-bento-grid">
+        <article class="fipe-card">
+          <div class="fipe-card-content">
+            <span class="fipe-tag">SUV + ATIVO</span>
+            <h3>Volkswagen Taos 2023</h3>
+            <p class="fipe-meta">Placa: RQX-5F82 • Cor: Azul Atlantic</p>
+
+            <div class="fipe-summary-row">
+              <div>
+                <span class="fipe-label">FIPE</span>
+                <strong class="fipe-date">MAR/2024</strong>
+              </div>
+              <strong class="fipe-price">R$ 178.450</strong>
+            </div>
+
+            <div class="vehicle-feature-grid">
+              <article class="vehicle-feature-card">
+                <span>Origem OK</span>
+              </article>
+              <article class="vehicle-feature-card">
+                <span>Único Dono</span>
+              </article>
+              <article class="vehicle-feature-card">
+                <span>Garantia</span>
+              </article>
+            </div>
+          </div>
+          <img src="assets/illustration-fipe.svg" alt="Ilustração FIPE" class="fipe-card-illustration">
+        </article>
+
+        <article class="summary-card">
+          <h3>Valor FIPE</h3>
+          <p class="summary-card-text">Tendência de mercado para os últimos 6 meses.</p>
+
+          <div class="fipe-trend">
+            <strong>+1.2%</strong>
+            <div class="trend-chart">
+              <span class="trend-bar"></span>
+              <span class="trend-bar"></span>
+              <span class="trend-bar"></span>
+              <span class="trend-bar active"></span>
+            </div>
+          </div>
+
+          <img src="assets/visual-abstract.svg" alt="Elementos visuais" class="summary-card-visual">
+        </article>
+
+        <section class="status-report">
+          <div class="status-report-heading">
+            <h3>Relatório de Procedência</h3>
+          </div>
+          <div class="status-report-items">
+            <article class="status-item">
+              <span class="status-item-title">Jurídico</span>
+              <strong>Sem restrições judiciais</strong>
+              <p>Veículo livre para transferência imediata.</p>
+            </article>
+            <article class="status-item">
+              <span class="status-item-title">Recall</span>
+              <strong>Histórico de Recall: OK</strong>
+              <p>Todas as campanhas foram atendidas pelo fabricante.</p>
+            </article>
+            <article class="status-item">
+              <span class="status-item-title">Segurança</span>
+              <strong>Roubo/Furto: Nada consta</strong>
+              <p>Nenhum registro ativo em bases nacionais (SINESP/INFOSEG).</p>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <nav class="nav-active-state bottom-nav">
+      <a class="nav-item" href="home.html">
+        <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
+        <span>Início</span>
+      </a>
+      <a class="nav-item active" href="veiculos.html">
+        <img class="nav-icon" src="assets/icon-vehicles-active.svg" alt="Veículos">
+        <span>Veículos</span>
+      </a>
+      <a class="nav-item" href="carteira.html">
+        <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
+        <span>Documentos</span>
+      </a>
+      <a class="nav-item" href="login.html">
+        <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
+        <span>Perfil</span>
+      </a>
+    </nav>
+  <script src="navigation.js"></script>
+  </div>
+</body>
+</html>

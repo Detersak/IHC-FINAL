@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentos | Detran-DF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="header-topappbar">
+      <div class="topappbar-left">
+        <div class="avatar profile-avatar"></div>
+        <div class="brand">
+          <strong>Detran-DF</strong>
+        </div>
+      </div>
+      <button class="topappbar-button" aria-label="Opções">
+        <img src="assets/top-button-icon.svg" alt="Ícone de opções">
+      </button>
+    </header>
+
+    <main class="wallet-main">
+      <section class="wallet-heading">
+        <div>
+          <p class="eyebrow">Carteira Digital</p>
+          <h1>Seus documentos oficiais sempre com você.</h1>
+        </div>
+        <div class="wallet-actions">
+          <button class="secondary-button active" data-document="cnh">CNH</button>
+          <button class="secondary-button" data-document="crlv">CRLV</button>
+        </div>
+        <div class="wallet-document-summary" id="walletDocumentSummary">
+          <strong class="wallet-summary-title">Carteira Nacional de Habilitação</strong>
+          <p class="wallet-summary-text">CNH digital disponível para apresentar em fiscalizações e consultas.</p>
+        </div>
+        <div class="status-pill available">DISPONÍVEL OFFLINE</div>
+      </section>
+
+      <section class="wallet-grid">
+        <article class="document-card">
+          <div class="document-card-header">
+            <div>
+              <span class="eyebrow" id="walletDocumentCardLabel">Carteira Digital</span>
+              <h2 id="walletDocumentCardTitle">CNH</h2>
+            </div>
+          </div>
+          <div class="document-preview-card">
+            <div class="document-preview-graphic"></div>
+          </div>
+          <div class="document-actions">
+            <button class="secondary-button">Baixar PDF</button>
+            <button class="secondary-button">Compartilhar</button>
+          </div>
+        </article>
+
+        <article class="details-card">
+          <div class="details-card-header">
+            <h2>Detalhes do Documento</h2>
+          </div>
+          <div class="detail-row">
+            <span>Número do Registro</span>
+            <strong>09874536210</strong>
+          </div>
+          <div class="detail-row">
+            <span>Data de Emissão</span>
+            <strong>15/06/2023</strong>
+          </div>
+          <div class="detail-row">
+            <span>Local de Emissão</span>
+            <strong>DETRAN / DF</strong>
+          </div>
+
+          <article class="security-card">
+            <div class="security-card-row">
+              <div class="security-icon"></div>
+              <div>
+                <strong>Validação segura</strong>
+                <p>Este documento pode ser validado por agentes de trânsito através de QR Code integrado, mesmo sem internet.</p>
+              </div>
+            </div>
+          </article>
+
+          <button class="primary-button">Histórico de Alterações</button>
+        </article>
+      </section>
+    </main>
+
+    <nav class="nav-active-state">
+      <a class="nav-item" href="home.html">
+        <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
+        <span>Início</span>
+      </a>
+      <a class="nav-item" href="veiculos.html">
+        <img class="nav-icon" src="assets/icon-vehicles-active.svg" alt="Veículos">
+        <span>Veículos</span>
+      </a>
+      <a class="nav-item active" href="carteira.html">
+        <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
+        <span>Documentos</span>
+      </a>
+      <a class="nav-item" href="login.html">
+        <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
+        <span>Perfil</span>
+      </a>
+    </nav>
+  <script src="navigation.js"></script>
+  </div>
+</body>
+</html>

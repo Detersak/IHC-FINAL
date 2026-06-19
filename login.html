@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Detran-DF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="html-body">
+  <main class="center-login-form">
+    <section class="mobile-logo-small-discrete-margin">
+      <div class="mobile-logo-small-discrete">
+        <div class="background-shadow">
+          <div class="container logo-icon"></div>
+        </div>
+        <div class="container">
+          <span class="text logo-text">Detran-DF</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-card">
+      <div class="container login-card-headings">
+        <div class="heading-2">
+          <div class="text title">Acessar Conta</div>
+        </div>
+        <div class="container">
+          <p class="text description">Entre com suas credenciais oficiais do portal.</p>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="user-field">
+          <label class="label" for="cpf-email">CPF ou e-mail</label>
+          <div class="container input-wrapper">
+            <input id="cpf-email" class="input-field" type="text" placeholder="000.000.000-00" autocomplete="username">
+            <img src="assets/icon-user.svg" alt="" class="input-icon left">
+          </div>
+        </div>
+
+        <div class="password-field">
+          <div class="container password-field-top">
+            <span class="text label">Senha</span>
+            <a href="#" class="text link">Esqueceu a senha?</a>
+          </div>
+          <div class="container input-wrapper password-wrapper">
+            <input id="senha" class="input-field" type="password" autocomplete="current-password" aria-label="Senha">
+            <img src="assets/icon-password-eye.svg" alt="" class="input-icon right">
+          </div>
+        </div>
+
+        <div class="remember-me">
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input">
+            <span class="checkbox-custom" aria-hidden="true"></span>
+            <span class="text remember-text">Lembrar meu acesso</span>
+          </label>
+        </div>
+
+        <button type="submit" class="button-primary">Confirmar</button>
+
+        <div class="horizontal-border">
+          <p class="text help-text">Não possui uma conta?</p>
+          <button type="button" class="button-secondary">SOLICITAR ACESSO</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="footer-credits-margin">
+      <div class="footer-credits">
+        <p>© 2024 Detran-DF<br>Kinetic Governance Framework v2.4</p>
+      </div>
+    </section>
+  </main>
+  <script src="navigation.js"></script>
