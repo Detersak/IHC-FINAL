@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detran-DF | Perfil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+  <div class="page-shell profile-page">
+    <header class="header-topappbar">
+      <div class="topappbar-left">
+        <div class="profile-avatar"></div>
+        <div>
+          <div class="brand-text">Gestão Veicular</div>
+          <strong>Perfil</strong>
+        </div>
+      </div>
+      <button class="topappbar-button" aria-label="Notificações">
+        <img src="assets/top-button-icon.svg" alt="Notificações">
+      </button>
+    </header>
+
+    <main class="home-main profile-main">
+      <section class="profile-header-card dashboard-card">
+        <div style="display:flex; align-items:center; gap:24px;">
+          <div style="width:120px; height:120px; border-radius:9999px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+            <img src="assets/profile-photo.png" alt="João Silva" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div>
+            <h1 style="margin:0;">João Silva</h1>
+            <div style="margin-top:8px; display:flex; gap:8px; align-items:center;">
+              <span class="status-pill">Cat. B</span>
+              <span class="dash-pill dash-pill-success">Regular</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-stats" style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+        <div class="dashboard-card">
+          <div class="dashboard-card-top">
+            <div>
+              <strong style="font-size:18px;">1</strong>
+              <p style="margin:4px 0 0; color:#64748B;">VEÍCULOS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="dashboard-card-top">
+            <div>
+              <strong style="font-size:18px;">2</strong>
+              <p style="margin:4px 0 0; color:#64748B;">DOCUMENTO DIGITAL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="account-info">
+        <div class="dashboard-card">
+          <div style="padding:18px;">
+            <h2 style="margin:0 0 12px;">Informações da Conta</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div>
+                <div style="font-size:12px; color:#64748B;">NOME COMPLETO</div>
+                <div>João Silva</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:#64748B;">CPF</div>
+                <div>***.456.789-**</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:#64748B;">CNH</div>
+                <div>12345678900</div>
+              </div>
+              <div>
+                <div style="font-size:12px; color:#64748B;">VALIDADE</div>
+                <div>15/08/2028</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logout-action" style="padding: 0 18px 24px;">
+        <button type="button" class="primary-button" onclick="window.location.href='index.html'">Logout</button>
+      </section>
+
+    </main>
+
+    <nav class="nav-active-state bottom-nav">
+      <a class="nav-item" href="home.html">
+        <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
+        <span>Início</span>
+      </a>
+      <a class="nav-item" href="veiculos.html">
+        <img class="nav-icon" src="assets/icon-vehicles-active.svg" alt="Veículos">
+        <span>Veículos</span>
+      </a>
+      <a class="nav-item" href="carteira.html">
+        <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
+        <span>Documentos</span>
+      </a>
+      <a class="nav-item active" href="perfil.html">
+        <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
+        <span>Perfil</span>
+      </a>
+    </nav>
+  <script src="navigation.js"></script>
+  </div>
+</body>
+</html>

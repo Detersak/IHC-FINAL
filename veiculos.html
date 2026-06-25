@@ -10,7 +10,6 @@
   <div class="page-shell vehicles-page">
     <header class="header-topappbar">
       <div class="topappbar-left">
-        <div class="avatar profile-avatar"></div>
         <div class="brand">
           <strong>Detran-DF</strong>
         </div>
@@ -23,8 +22,8 @@
     <main class="main-vehicles">
       <section class="vehicle-current-header">
         <div>
-          <span class="eyebrow">Veículo Atual</span>
-          <h2>Volkswagen Taos 2023</h2>
+          <h1>Seu Veículo:</h1>
+          <h2>Ford Focus RS 2017</h2>
           <p class="vehicle-current-meta">Placa RQX-5F82 • Cor Azul Atlantic</p>
         </div>
         <button class="primary-button" data-link="veiculodetalhe.html">Ver Detalhes do Veículo</button>
@@ -39,9 +38,9 @@
         <div class="search-action">
           <div class="search-input">
             <img src="assets/icon-search.svg" alt="Buscar placa" class="search-input-icon">
-            <input type="text" placeholder="Digite a placa (ex: ABC1D23)" aria-label="Digite a placa">
+            <input type="text" id="license-plate-input" placeholder="Digite a placa (ex: ABC1D23)" aria-label="Digite a placa" maxlength="7">
           </div>
-          <button type="button" class="search-button" data-link="veiculodetalhe.html">CONSULTAR</button>
+          <button type="button" class="search-button" data-link="">CONSULTAR</button>
         </div>
       </section>
 
@@ -49,7 +48,7 @@
         <article class="fipe-card">
           <div class="fipe-card-content">
             <span class="fipe-tag">SUV + ATIVO</span>
-            <h3>Volkswagen Taos 2023</h3>
+            <h3>Citroen DS3 2013</h3>
             <p class="fipe-meta">Placa: RQX-5F82 • Cor: Azul Atlantic</p>
 
             <div class="fipe-summary-row">
@@ -57,7 +56,7 @@
                 <span class="fipe-label">FIPE</span>
                 <strong class="fipe-date">MAR/2024</strong>
               </div>
-              <strong class="fipe-price">R$ 178.450</strong>
+              <strong class="fipe-price">R$ 56.952,00</strong>
             </div>
 
             <div class="vehicle-feature-grid">
@@ -130,12 +129,53 @@
         <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
         <span>Documentos</span>
       </a>
-      <a class="nav-item" href="login.html">
+      <a class="nav-item" href="perfil.html">
         <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
         <span>Perfil</span>
       </a>
     </nav>
   <script src="navigation.js"></script>
+  <script>
+    // Máscara para placa de veículo (ABC1D23)
+    const licensePlateInput = document.getElementById('license-plate-input');
+    
+    if (licensePlateInput) {
+      licensePlateInput.addEventListener('input', function(e) {
+        let value = e.target.value.toUpperCase();
+        let formatted = '';
+        
+        // Remove caracteres inválidos
+        value = value.replace(/[^A-Z0-9]/g, '');
+        
+        // Aplica o padrão: AAA#A##
+        for (let i = 0; i < value.length && i < 7; i++) {
+          if (i < 3) {
+            // Primeiras 3 posições: apenas letras
+            if (/[A-Z]/.test(value[i])) {
+              formatted += value[i];
+            }
+          } else if (i === 3) {
+            // 4ª posição: apenas número
+            if (/[0-9]/.test(value[i])) {
+              formatted += value[i];
+            }
+          } else if (i === 4) {
+            // 5ª posição: apenas letra
+            if (/[A-Z]/.test(value[i])) {
+              formatted += value[i];
+            }
+          } else {
+            // 6ª e 7ª posições: apenas números
+            if (/[0-9]/.test(value[i])) {
+              formatted += value[i];
+            }
+          }
+        }
+        
+        e.target.value = formatted;
+      });
+    }
+  </script>
   </div>
 </body>
 </html>

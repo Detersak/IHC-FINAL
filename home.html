@@ -10,7 +10,7 @@
   <div class="page-shell home-page">
     <header class="header-topappbar">
       <div class="topappbar-left">
-        <img src="assets/avatar.png" alt="João Silva" class="header-avatar">
+        <div class="avatar profile-avatar"></div>
         <div>
           <div class="brand-text">Olá, João Silva</div>
           <strong>Detran-DF</strong>
@@ -25,7 +25,7 @@
       <section class="dashboard-card">
         <div class="dashboard-card-top">
           <div>
-            <h1>Toyota Corolla 2023</h1>
+            <h1>Ford Focus RS 2017</h1>
             <p class="vehicle-subtitle">Placa: ABC-1234 • Prata</p>
           </div>
           <span class="status-pill pending">Pendente</span>
@@ -36,7 +36,7 @@
             <span class="billing-title">Licenciamento 2024</span>
             <strong class="billing-status">Aguardando Pagamento</strong>
           </div>
-          <button class="primary-button">Regularizar</button>
+          <button class="primary-button" onclick="location.href='veiculodetalhe.html'">Regularizar</button>
         </div>
 
         <div class="dash-pill-row">
@@ -46,35 +46,12 @@
         </div>
       </section>
 
-      <section class="quick-services">
-        <div class="quick-service-main">
-          <span class="eyebrow">Serviços Rápidos</span>
-          <strong>Pagar Débitos</strong>
-          <p>Quitação via PIX ou Boleto</p>
-        </div>
-
-        <div class="quick-service-list">
-          <button class="quick-service-card" data-link="carteira.html">
-            <img src="assets/icon-documents.svg" alt="Documentos">
-            <span>Documentos</span>
-          </button>
-          <button class="quick-service-card" data-link="veiculos.html">
-            <img src="assets/icon-historico-veicular.png" alt="Histórico">
-            <span>Histórico</span>
-          </button>
-          <button class="quick-service-card" data-link="login.html">
-            <img src="assets/icon-indicacao-de-condutor.png" alt="Condutor">
-            <span>Condutor</span>
-          </button>
-        </div>
-      </section>
-
+ 
       <section class="alert-section">
         <div class="alert-heading">
           <div>
             <h2>Últimos Alertas</h2>
           </div>
-          <a href="#">Ver todos</a>
         </div>
 
         <article class="alert-card alert-warning">
@@ -83,7 +60,7 @@
             <strong>Nova Infração Detectada</strong>
           </div>
           <p>Hoje, 03:24 • Excesso de velocidade em Rod. Castelo Branco, Km 22.</p>
-          <a href="#" class="alert-detail-link">Detalhes &gt;</a>
+          <a href="veiculodetalhe.html" class="alert-detail-link">Detalhes &gt;</a>
         </article>
 
         <article class="alert-card alert-success">
@@ -103,21 +80,21 @@
       </section>
     </main>
 
-    <nav class="nav-active-state">
+    <nav class="nav-active-state bottom-nav">
       <a class="nav-item active" href="home.html">
-        <img class="nav-icon" src="assets/icon-nav-inicio.png" alt="Início">
+        <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
         <span>Início</span>
       </a>
       <a class="nav-item" href="veiculos.html">
-        <img class="nav-icon" src="assets/icon-nav-veiculos.png" alt="Veículos">
+        <img class="nav-icon" src="assets/icon-vehicles-active.svg" alt="Veículos">
         <span>Veículos</span>
       </a>
       <a class="nav-item" href="carteira.html">
-        <img class="nav-icon" src="assets/icon-nav-documentos.png" alt="Docs">
-        <span>Docs</span>
+        <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
+        <span>Documentos</span>
       </a>
-      <a class="nav-item" href="login.html">
-        <img class="nav-icon" src="assets/icon-nav-perfil.png" alt="Perfil">
+      <a class="nav-item" href="perfil.html">
+        <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
         <span>Perfil</span>
       </a>
     </nav>

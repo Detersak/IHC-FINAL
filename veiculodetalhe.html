@@ -23,9 +23,9 @@
     <main class="vehicle-detail-main">
       <section class="vehicle-detail-board">
         <section class="vehicle-detail-hero">
+                      <h1 class="">Veículo atual</h1>
           <div class="vehicle-detail-text">
-            <span class="eyebrow">VEÍCULO ATUAL</span>
-            <h1>Toyota Corolla XEi 2023</h1>
+            <h2>Ford Focus RS 2017</h2>
             <div class="vehicle-detail-meta">
               <span class="vehicle-plate">ABC-1D23</span>
               <span class="vehicle-status-pill">EM DIA</span>
@@ -112,14 +112,14 @@
           <div class="payment-header">
             <h2>Formas de Pagamento</h2>
           </div>
-          <button class="payment-card pix-card">
+          <button class="payment-card pix-card" data-method="pix">
             <div>
               <strong>Pagar com Pix</strong>
               <p>Aprovação imediata do documento</p>
             </div>
             <span class="payment-tag">5% OFF</span>
           </button>
-          <button class="payment-card card-card">
+          <button class="payment-card card-card" data-method="card">
             <div>
               <strong>Parcelar no Cartão</strong>
               <p>Em até 12x com taxas reduzidas</p>
@@ -143,7 +143,6 @@
       <div class="modal-overlay payment-confirm-modal" aria-hidden="true">
         <div class="modal-card">
           <button class="modal-close" aria-label="Fechar">×</button>
-          <span class="eyebrow">Boleto Gerado</span>
           <h2>Pagamento confirmado</h2>
           <p>Seu boleto foi gerado com sucesso e estará disponível para pagamento em até 24 horas úteis.</p>
           <button class="primary-button modal-ok-button">Ok</button>
@@ -164,12 +163,41 @@
         <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
         <span>Documentos</span>
       </a>
-      <a class="nav-item" href="login.html">
+      <a class="nav-item" href="perfil.html">
         <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
         <span>Perfil</span>
       </a>
     </nav>
   <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const paymentCards = document.querySelectorAll('.payment-card[data-method]');
+      const paymentConfirm = document.querySelector('.payment-confirm-button');
+      let selectedMethod = null;
+
+      function updateSelection(methodButton) {
+        paymentCards.forEach(card => {
+          card.classList.toggle('selected', card === methodButton);
+        });
+        selectedMethod = methodButton ? methodButton.dataset.method : null;
+        if (paymentConfirm) {
+          paymentConfirm.textContent = selectedMethod === 'card' ? 'Confirmar Pagamento no Cartão' : 'Confirmar Pagamento via Pix';
+          paymentConfirm.disabled = !selectedMethod;
+        }
+      }
+
+      paymentCards.forEach(card => {
+        card.addEventListener('click', function () {
+          updateSelection(this);
+        });
+      });
+
+      // Set default method on page load
+      if (paymentCards.length) {
+        updateSelection(paymentCards[0]);
+      }
+    });
+  </script>
   </div>
 </body>
 </html>

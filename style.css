@@ -5,6 +5,105 @@
   color: #001E40;
 }
 
+/* Landing-specific layout (fills viewport) */
+body.landing-body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  background: #F7F9FB;
+}
+
+body.landing-body .page-shell {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Services / Benefits cards */
+.services-grid,
+.benefits-grid {
+  display: grid;
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.services-grid > article,
+.benefits-grid > article {
+  height: 100%;
+}
+
+.service-card,
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-icon,
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  object-fit: none;
+  object-position: left center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.benefit-icon1 {
+  width: 64px;
+  height: 64px;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+
+
+
+.service-card p,
+.benefit-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .service-icon,
+  .benefit-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -12,7 +111,9 @@
 html,
 body {
   margin: 0;
+  padding: 0;
   min-height: 100%;
+  width: 100%;
 }
 
 body {
@@ -20,31 +121,39 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 24px;
   background: #F7F9FB;
 }
 
 .html-body {
-  width: min(420px, 100%);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .page-shell {
-  width: min(1120px, 100%);
-  max-width: 1120px;
-  margin: 0 auto;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
   background: #FFFFFF;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  overflow-y: auto;
+  box-shadow: none;
+  padding-bottom: 92px; /* reserve space for footer */
 }
 
 .vehicles-page {
-  width: calc(100vw + 48px);
-  max-width: calc(100vw + 48px);
-  margin: 0 -24px;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
   border-radius: 0;
   box-shadow: none;
   background: #F7F9FB;
+  overflow-y: auto;
 }
 
 .header-topappbar {
@@ -68,6 +177,15 @@ body {
   object-fit: cover;
 }
 
+.header-topappbar .brand strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #001E40;
+}
+
 .brand-text {
   font-size: 14px;
   color: #475569;
@@ -81,6 +199,9 @@ body {
   max-width: 420px;
   padding: 24px;
   margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+  overflow-y: auto;
 }
 
 .mobile-logo-small-discrete-margin {
@@ -784,22 +905,173 @@ body {
 }
 
 .hero-section {
-  position: relative;
-  min-height: 480px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 64px;
+  min-height: calc(100vh - 120px);
+  padding: 48px 64px;
+  background: linear-gradient(180deg, #001E40 0%, #0B4E9C 100%);
+  color: #FFFFFF;
 }
 
-.hero-content {
-  position: relative;
+.hero-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-copy {
+  max-width: 640px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #BFDBFE;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.98;
+  max-width: 12ch;
+}
+
+.hero-copy p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  border-radius: 16px;
+  background: #F8FAFC;
+  color: #001E40;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+.statistics-bento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 24px;
+  width: min(960px, 100%);
+  margin: 0 auto 48px;
+}
+
+.stat-card {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding: 36px;
+  border-radius: 32px;
+  background: #FFFFFF;
+  color: #001E40;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.08);
+}
+
+.stat-value {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.stat-label {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #475569;
+}
+
+.hero-visual {
+  display: flex;
   justify-content: center;
-  gap: 24px;
-  padding: 108px 48px 110px;
-  min-height: 480px;
-  color: #FFFFFF;
-  max-width: 560px;
-  margin: 0 auto;
+}
+
+.hero-panel {
+  width: 100%;
+  max-width: 500px;
+  padding: 32px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.hero-panel-title {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #BFDBFE;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero-panel-card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+}
+
+.hero-panel-line {
+  display: block;
+  width: 100%;
+  height: 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-panel-line.short {
+  width: 60%;
+}
+
+.hero-panel-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.meta-pill {
+  padding: 10px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #DFF6FF;
+  font-weight: 700;
 }
 
 @media (min-width: 900px) {
@@ -825,14 +1097,16 @@ body {
 }
 
 .footer-institutional {
+  position: static;
   border-top: 1px solid #C3C6D1;
   padding: 32px 24px;
+  background: #FFFFFF;
 }
 
 .footer-top {
   display: grid;
   gap: 24px;
-  justify-items: center;
+  justify-items: start;
 }
 
 .footer-brand strong {
@@ -890,8 +1164,12 @@ body {
 }
 
 .nav-item.active {
-  background: #F2F4F6;
-  color: #001E40;
+  background: #DCFCE7;
+  color: #047857;
+}
+
+.nav-item.active .nav-icon {
+  filter: invert(39%) sepia(88%) saturate(523%) hue-rotate(89deg) brightness(95%) contrast(92%);
 }
 
 .nav-icon {
@@ -903,7 +1181,6 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
-
 @media (max-width: 900px) {
   .hero-content {
     padding: 80px 24px 80px;
@@ -961,6 +1238,10 @@ body {
   padding-bottom: 180px;
 }
 
+/* Hide header action button (small blue icon) on vehicle detail page */
+.vehicle-detail-page .topappbar-button {
+  display: none;
+}
 .vehicle-detail-main {
   display: grid;
   grid-template-columns: 1.65fr 0.85fr;
@@ -1152,6 +1433,10 @@ body {
 .quick-service-card img {
   width: 24px;
   height: 24px;
+  display: block  ;
+  object-fit: fill;
+  object-position:right center;
+  
 }
 
 .alert-section {
@@ -1449,14 +1734,20 @@ body {
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-radius: 24px;
-  padding: 28px;
+  padding: 36px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  height: fit-content;
 }
 
 .payment-header h2 {
   margin: 0 0 6px;
   font-size: 20px;
   color: #001E40;
+}
+
+.payment-methods {
+  display: grid;
+  gap: 16px;
 }
 
 .payment-card {
@@ -1492,6 +1783,19 @@ body {
   background: #ECFDF5;
 }
 
+.payment-card.selected {
+  border-color: #0B4E9C;
+  background: #E8F1FF;
+}
+
+.payment-card.selected strong {
+  color: #0B4E9C;
+}
+
+.payment-card.selected p {
+  color: #334155;
+}
+
 .payment-tag {
   display: inline-flex;
   align-items: center;
@@ -1513,6 +1817,9 @@ body {
   color: #475569;
   font-size: 14px;
   line-height: 1.7;
+  font: inherit;
+  height: fit-content;
+  
 }
 
 .wallet-main {
@@ -1701,18 +2008,19 @@ body {
 
 .selected-summary {
   display: grid;
-  gap: 18px;
+  gap: 12px;
   border: 1px solid #E5E7EB;
   border-radius: 24px;
   padding: 24px;
   background: #FFFFFF;
+  height: fit-content;
 }
 
 .selected-summary div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 .modal-overlay {

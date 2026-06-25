@@ -10,7 +10,6 @@
   <div class="page-shell">
     <header class="header-topappbar">
       <div class="topappbar-left">
-        <div class="avatar profile-avatar"></div>
         <div class="brand">
           <strong>Detran-DF</strong>
         </div>
@@ -23,7 +22,6 @@
     <main class="wallet-main">
       <section class="wallet-heading">
         <div>
-          <p class="eyebrow">Carteira Digital</p>
           <h1>Seus documentos oficiais sempre com você.</h1>
         </div>
         <div class="wallet-actions">
@@ -41,16 +39,14 @@
         <article class="document-card">
           <div class="document-card-header">
             <div>
-              <span class="eyebrow" id="walletDocumentCardLabel">Carteira Digital</span>
+              <span class="document-card-label" id="walletDocumentCardLabel">Carteira Digital</span>
               <h2 id="walletDocumentCardTitle">CNH</h2>
             </div>
           </div>
           <div class="document-preview-card">
-            <div class="document-preview-graphic"></div>
           </div>
           <div class="document-actions">
-            <button class="secondary-button">Baixar PDF</button>
-            <button class="secondary-button">Compartilhar</button>
+            <button class="secondary-button" id="downloadPdfButton">Baixar PDF</button>
           </div>
         </article>
 
@@ -81,12 +77,11 @@
             </div>
           </article>
 
-          <button class="primary-button">Histórico de Alterações</button>
         </article>
       </section>
     </main>
 
-    <nav class="nav-active-state">
+    <nav class="nav-active-state bottom-nav">
       <a class="nav-item" href="home.html">
         <img class="nav-icon" src="assets/icon-home.svg" alt="Início">
         <span>Início</span>
@@ -99,12 +94,80 @@
         <img class="nav-icon" src="assets/icon-documents.svg" alt="Documentos">
         <span>Documentos</span>
       </a>
-      <a class="nav-item" href="login.html">
+      <a class="nav-item" href="perfil.html">
         <img class="nav-icon" src="assets/icon-profile.svg" alt="Perfil">
         <span>Perfil</span>
       </a>
     </nav>
+
+    <div class="modal-overlay" id="downloadConfirmModal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" type="button" aria-label="Fechar">×</button>
+        <h2>Confirmar download</h2>
+        <p>Deseja baixar o PDF do documento agora?</p>
+        <div style="display:flex; gap:12px; justify-content:flex-end; margin-top:16px;">
+          <button class="secondary-button" id="cancelDownloadButton" type="button">Cancelar</button>
+          <button class="primary-button" id="confirmDownloadButton" type="button">Baixar PDF</button>
+        </div>
+      </div>
+    </div>
+
   <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var downloadButton = document.getElementById('downloadPdfButton');
+      var modal = document.getElementById('downloadConfirmModal');
+      var closeModalButton = document.querySelector('#downloadConfirmModal .modal-close');
+      var cancelButton = document.getElementById('cancelDownloadButton');
+      var confirmButton = document.getElementById('confirmDownloadButton');
+
+      function openModal() {
+        if (!modal) return;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      if (downloadButton) {
+        downloadButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          openModal();
+        });
+      }
+
+      if (closeModalButton) {
+        closeModalButton.addEventListener('click', function () {
+          closeModal();
+        });
+      }
+
+      if (cancelButton) {
+        cancelButton.addEventListener('click', function () {
+          closeModal();
+        });
+      }
+
+      if (confirmButton) {
+        confirmButton.addEventListener('click', function () {
+          closeModal();
+          alert('Download iniciado.');
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
+    });
+  </script>
   </div>
 </body>
 </html>
